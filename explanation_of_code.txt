@@ -1,0 +1,14 @@
+I have used naive string matching algorithm to utilize some of the regular expression symbols('.','?','^','$')
+
+in the main function user is prompted to enter the number of test cases(number of text and pattern file pairs).I have inluded 5 text and pattern file pairs. So 5 should be entered for the program to be tested on these files. If you add more text and pattern files, the number should be entered accordingly.
+
+A for loop is used to find each pattern in coresponding text file.(pattern contained in pattern1.txt is searched in text1.txt file and so on.)
+Both text and pattern file are opend and find_pattern() function is called for each text and pattern file pair.
+
+in the find_pattern() function matchpattern.output file is created.
+
+Outer for loop inside find_pattern() decides starting from which character of the text, pattern should be searched. Simply it progresses the pattern along the text. Within this outer for loop matchpattern() function is called after putting pattern against each character of the text.
+
+match_pattern() is the function that actually checks whether the pattern can be found and return true or false based on its findings.
+
+patternpos stands for pattern position(index) and textpos stands for text position(index) in function parameters.
