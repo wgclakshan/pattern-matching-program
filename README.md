@@ -7,9 +7,10 @@ This program checks for the ocuurences of a pattern in a given text and writes t
 - C++ Compiler(g++)
 - Text and Pattern files pairs (eg :- text1.txt,pattern1.txt,text2.txt,pattern2.txt) for testing.
   
-  ## Getting Started
+## Getting Started
 
   1. Clone this repository to your local machine.
+   ```git clone https://github.com/wgclakshan/pattern-matching-program.git```
    
   2. Navigate to the cloned directory.(Or else download the uploaded zip file and extract it and then compile the c++ source code using below mentioned code.)
     ``cd pattern-matching-program``
@@ -19,7 +20,7 @@ This program checks for the ocuurences of a pattern in a given text and writes t
 
 ## Usage
 
-1. Prepare your text and pattern files. Create text files named 'text1.txt', 'text2.txt', etc., and pattern files named 'pattern1.txt', 'pattern2.txt', etc. Place them in the same directory as the program.
+1. Prepare your text and pattern files. Create text files named 'text1.txt', 'text2.txt', etc. in Text directory, and pattern files named 'pattern1.txt', 'pattern2.txt', etc. in Pattern directory.Place them(Text & Pattern directories) in the same directory as the program.
 
 2. Run the program by specifying the number of test cases.
    ```./patternmatching```

@@ -16,14 +16,14 @@ int main(){
     for(int i=1;i<=number_of_test_cases;i++){
         
         //open the texti.txt file where i can be any value between 1 & number_of_test_cases
-        std::ifstream text_file("text"+std::to_string(i)+".txt");
+        std::ifstream text_file("Text/text"+std::to_string(i)+".txt");
         if(!text_file.is_open()){
             std::cerr<<"Error opening the file text" << i << ".txt" << std::endl;
             continue;
         }
 
         //open the patterni.txt file where i can be any value between 1 & number_of_test_cases
-        std::ifstream pattern_file("pattern"+std::to_string(i)+".txt");
+        std::ifstream pattern_file("Pattern/pattern"+std::to_string(i)+".txt");
         if(!pattern_file.is_open()){
             std::cerr<<"Error opening the file pattern" << i << ".txt" << std::endl;
             continue;
@@ -50,7 +50,7 @@ void find_pattern(std::ifstream& text_file, std::ifstream& pattern_file, int out
     std:: string text;
     int line_number = 1;//Used to track the line number of text file.
 
-    std::ofstream outputFile("outputpatternmatch"+std::to_string(outputfile_number)+".output");
+    std::ofstream outputFile("Output/outputpatternmatch"+std::to_string(outputfile_number)+".output");
     if(!outputFile.is_open()){
         std::cerr<<"Error opening/creating patternmatch" << outputfile_number << ".output file." << std::endl;
         return;
@@ -76,7 +76,7 @@ void find_pattern(std::ifstream& text_file, std::ifstream& pattern_file, int out
                     }
                 }
 
-                //std::cout << "Pattern found at line " << line_number << ", position " << position << std::endl;
+                std::cout << "Pattern found at line " << line_number << ", position " << position << std::endl;
                 outputFile << "Pattern found at line " << line_number << ", position " << position << std::endl;
                 pattern_found = true;
             }
