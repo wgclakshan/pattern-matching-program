@@ -4,7 +4,7 @@ This program checks for the ocuurences of a pattern in a given text and writes t
 
 ## Prerequisites
 
-- C++ Compiler(g++)
+- C++ Compiler(g++) that supports C++17 or later
 - Text and Pattern files pairs (eg :- text1.txt,pattern1.txt,text2.txt,pattern2.txt) for testing.
   
 ## Getting Started
@@ -16,7 +16,7 @@ This program checks for the ocuurences of a pattern in a given text and writes t
     ``cd pattern-matching-program``
 
   3. Compile the program using g++ compiler
-    ```g++ patternmatching.cpp -o patternmatching```
+    ```g++ -std=c++17 patternmatching.cpp -o patternmatching```
 
 ## Usage
 
