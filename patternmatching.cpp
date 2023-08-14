@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <filesystem>
 
 void find_pattern(std::ifstream& text_file,std::ifstream& pattern_file,int outputfile_number);
 
@@ -50,6 +51,14 @@ void find_pattern(std::ifstream& text_file, std::ifstream& pattern_file, int out
     std:: string text;
     int line_number = 1;//Used to track the line number of text file.
 
+    //create the output directory if it doesn't exist
+    if(!std::filesystem::exists("Output")){
+        if(!std::filesystem::create_directory("Output")){
+            std::cerr<<"Error creating Output Directory" << std::endl;
+            return;
+        }
+    }
+
     std::ofstream outputFile("Output/outputpatternmatch"+std::to_string(outputfile_number)+".output");
     if(!outputFile.is_open()){
         std::cerr<<"Error opening/creating patternmatch" << outputfile_number << ".output file." << std::endl;
@@ -76,7 +85,7 @@ void find_pattern(std::ifstream& text_file, std::ifstream& pattern_file, int out
                     }
                 }
 
-                std::cout << "Pattern found at line " << line_number << ", position " << position << std::endl;
+                //std::cout << "Pattern found at line " << line_number << ", position " << position << std::endl;
                 outputFile << "Pattern found at line " << line_number << ", position " << position << std::endl;
                 pattern_found = true;
             }
@@ -116,6 +125,9 @@ bool matchPattern(const std::string& text, int textpos, const std::string& patte
     
     else if(pattern[patternpos] == '$' && patternpos == pattern.length()-1 && text[textpos]== '\n'){
         return true;
+    }
+    else if(pattern[patternpos] == '?'){
+        return matchPattern(text,textpos,pattern,patternpos+1);
     }
 
     return false;
